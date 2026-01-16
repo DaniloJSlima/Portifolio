@@ -16,7 +16,7 @@ Sou estudante e entusiasta de tecnologia, com interesse em desenvolvimento web, 
 
 ## 📂 O que você encontra neste projeto
 - Página inicial com apresentação
-- Seção sobre mim
+- Seção “Sobre mim”
 - Portfólio de projetos
 - Informações de contato
 - Layout responsivo
@@ -25,7 +25,7 @@ Sou estudante e entusiasta de tecnologia, com interesse em desenvolvimento web, 
 Este portfólio foi criado para consolidar meus estudos, praticar desenvolvimento front-end e servir como vitrine profissional para oportunidades futuras.
 
 ## 📌 Status do projeto
-✅ Em desenvolvimento contínuo — sempre recebendo melhorias e novos projetos.
+🚧 Em desenvolvimento contínuo — sempre recebendo melhorias e novos projetos.
 
 ## 📬 Contato
 Caso queira entrar em contato ou dar feedback, fique à vontade para me chamar.
