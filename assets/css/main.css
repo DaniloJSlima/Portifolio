@@ -72,8 +72,6 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
 .php-email-form .error-message {
   display: none;
   background: #df1529;
@@ -504,7 +502,7 @@ h6 {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  animation: animate-preloader 1.5s linear infinite;
+  animation: animate-preloader 6.5s linear infinite;
 }
 
 @keyframes animate-preloader {
