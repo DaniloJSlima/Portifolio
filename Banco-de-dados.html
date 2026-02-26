@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Resume - Personal Bootstrap Template</title>
+  <title>Blog: Banco de dados</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -31,20 +31,19 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <h1 class="sitename">Personal</h1>
+        <h1 class="sitename">Portifolio</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">Conhecimentos</a></li>
-          <!--<li><a href="resume.html" class="active">Blogs</a></li>-->
+          <li><a href="Conhecimentos.html">Conhecimentos</a></li>
           <!--<li><a href="services.html">Services</a></li>-->
           <li><a href="portfolio.html">Projetos</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>Blogs</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li><a href="#">POO</a></li>
+              <li class="dropdown"><a href="#"><span>Python</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Bolog</a></li>
                 </ul>
@@ -69,8 +68,8 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Resume</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <h1>Blog</h1>
+              <p class="mb-0">Essa é uma explicação sobre o Banco de dados, SGBD (Sistema de gerenciador de banco de dados) e toda a sua arquitetura e do que tem por trás...</p>
             </div>
           </div>
         </div>
@@ -79,7 +78,7 @@
         <div class="container">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Resume</li>
+            <li class="current">Blogs</li>
           </ol>
         </div>
       </nav>
@@ -93,28 +92,30 @@
         <div class="row">
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sumary</h3>
+            <h3 class="resume-title">O que é o Banco de dados?</h3>
 
             <div class="resume-item pb-0">
-              <h4>Brandon Johnson</h4>
-              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
-              <ul>
-                <li>Portland par 127,Orlando, FL</li>
-                <li>(123) 456-7891</li>
-                <li>alice.barkley@example.com</li>
-              </ul>
+              <h4>Surgimento do Banco de dados</h4>
+              <p><em>Banco de dados é um conjunto organizado de dados e informações, armazenados de forma estruturada para facilitar o acesso, a consulta e a atualização.
+Ele é controlado por um SGBD (Sistema de Gerenciamento de Banco de Dados), que surgiu na década de 1970 como uma forma de melhorar a organização, o armazenamento e o gerenciamento dos dados.</em></p>
+<p><em>O SGBD permite que múltiplos usuários utilizem o mesmo banco de dados ao mesmo tempo, sem que ocorram conflitos ou perda de informações. Ele também garante a integridade dos dados, ou seja, assegura que as informações permaneçam corretas e consistentes mesmo após diversas operações. Além disso, oferece mecanismos de segurança, controlando quem pode acessar determinadas informações e quais ações cada usuário está autorizado a realizar.</em></p>
+<p><em>Outro ponto fundamental é o controle de transações. Em sistemas como bancos, lojas virtuais ou aplicativos financeiros, é essencial que operações sejam executadas de forma completa e segura. Caso ocorra uma falha no meio do processo, o SGBD consegue restaurar o estado anterior dos dados, evitando inconsistências. Esse controle é baseado em princípios conhecidos como ACID (Atomicidade, Consistência, Isolamento e Durabilidade), que garantem confiabilidade nas operações.</em></p>
+<p><em>Os SGBDs começaram a ganhar destaque na década de 1970, principalmente com a evolução dos modelos de banco de dados relacionais. Um dos marcos históricos foi o desenvolvimento do modelo relacional por Edgar F. Codd, que revolucionou a forma como os dados eram organizados, propondo o uso de tabelas relacionadas entre si. A partir disso, surgiram diversos sistemas amplamente utilizados até hoje, como MySQL, PostgreSQL, Oracle Database e Microsoft SQL Server.</em></p>
+<p><em>Atualmente, praticamente todos os sistemas que utilizamos dependem de um SGBD, desde redes sociais e aplicativos de mensagens até sistemas hospitalares e plataformas de streaming. Sempre que você faz login em um site, realiza uma compra online ou salva uma informação em um aplicativo, existe um SGBD trabalhando nos bastidores para armazenar e gerenciar esses dados com segurança e eficiência.</em></p>
+<p><em>Portanto, o SGBD é uma das tecnologias mais importantes da computação moderna. Ele não apenas organiza dados, mas garante que eles sejam acessíveis, confiáveis e protegidos. Para quem deseja atuar na área de tecnologia, compreender o funcionamento de um Sistema de Gerenciamento de Banco de Dados é um passo essencial para entender como os sistemas realmente funcionam por trás das telas que utilizamos todos os dias.</em></p>
             </div>
+            
 
-            <h3 class="resume-title">Education</h3>
+            <h3 class="resume-title">Componentes Principais da Arquitetura:</h3>
             <div class="resume-item">
-              <h4>Master of Fine Arts &amp; Graphic Design</h4>
-              <h5>2015 - 2016</h5>
-              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+              <h5>Modelos de dados</h5>
+              <p><em>Modelagem de dados é uma forma de representar os dados visuais, com objetivo de ilustrar os tipos de dados usados, mostrando como os dados são organizados, relações entre esse tipos de dados, a forma como os dados podem ser agrupados.</em></p>
+              <h5>Modelos de dados</h5>
               <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
             </div>
 
             <div class="resume-item">
-              <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
+              <h4>..... &amp; ....</h4>
               <h5>2010 - 2014</h5>
               <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
               <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
