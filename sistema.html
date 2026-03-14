@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Blog: Banco de dados</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/Foguete.gif" rel="icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="resume-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Portifolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="Conhecimentos.html">Conhecimentos</a></li>
+          <!--<li><a href="services.html">Services</a></li>-->
+          <li><a href="portfolio.html">Projetos</a></li>
+          <li class="dropdown"><a href="#"><span>Blogs</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="Banco-de-dados.html">Banco de dados</a></li>
+              <li class="dropdown"><a href="POO.html"><span>POO</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="POO.html">POO</a></li>
+                  <li><a href="#">Polimofismo</a></li>
+                  <li><a href="#">abstração</a></li>
+                  <li><a href="#">Encapsulamento</a></li>
+                  <li><a href="#">Herança</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Python</a></li>
+              <li><a href="#">Compiladores</a></li>
+              <li><a href="#">Sistema</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contatos</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Planejamento do Backend e Arquitetura de um Sistema de Gestão para Restaurante</h1>
+              <p class="mb-0">Essa é uma explicação sobre o Banco de dados, SGBD (Sistema de gerenciador de banco de dados) e toda a sua arquitetura e do que tem por trás...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Blogs</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    
+    <section id="resume" class="resume section">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">O que é o Banco de dados?</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Surgimento do Banco de dados</h4>
+              <p><em>Durante o desenvolvimento do meu sistema para restaurantes, consegui avançar bastante na parte visual e nas interfaces do sistema. Já desenvolvi componentes importantes como o KDS (Kitchen Display System), o cardápio digital e a tela principal voltada para o cliente, responsável por apresentar os produtos e atrair o consumidor para realizar pedidos.</em></p>
+<p><em>Apesar desse progresso na interface do sistema, comecei a perceber que ainda faltava desenvolver uma parte fundamental da aplicação: o backend, responsável por toda a lógica de funcionamento do sistema.</em></p>
+            </div>
+            
+
+            <h3 class="resume-title">O que já foi desenvolvido</h3>
+            <div class="resume-item">
+              <h5>Até o momento, as seguintes partes do sistema já foram construídas:</h5>
+                <ul>
+                    <li>Interface do KDS, utilizada pela equipe da cozinha para visualizar e montar os pedidos.</li>
+                    <li>Cardápio digital, onde os clientes podem visualizar os produtos disponíveis.</li>
+                    <li>Página principal, responsável por apresentar o restaurante e incentivar a realização de pedidos.</li>
+                </ul>
+                <p>Essas partes representam o frontend da aplicação, ou seja, aquilo que o usuário visualiza e com o qual interage diretamente.</p>
+                <p>No entanto, ainda é necessário desenvolver toda a infraestrutura que ficará por trás dessas interfaces, garantindo que as informações sejam processadas corretamente.</p>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Componentes que ainda precisam ser desenvolvidos</h4>
+              <p><em>Durante o planejamento do sistema, identifiquei vários módulos que ainda precisam ser criados no backend:</em></p>
+              <ul>
+                <li>Sistema de gerenciamento de pedidos</li>
+                <li>Despacho de pedidos para entrega</li>
+                <li>Controle financeiro</li>
+                <li>Gestão de estoque</li>
+                <li>Integração com plataformas externas</li>
+                <li>Sistema de rotas para entregadores</li>
+                <li>Painel administrativo para o proprietário</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Integração com plataformas de delivery</h4>
+              <p><em>Outro ponto importante é a integração com plataformas de delivery. A ideia é conectar o sistema com serviços como o iFood e o 99Food.</em></p>
+              <p>Atualmente, muitos restaurantes precisam utilizar vários aplicativos diferentes ao mesmo tempo para acompanhar pedidos e responder clientes. Isso gera confusão e reduz a eficiência do atendimento.</p>
+              <p>A proposta do sistema é criar uma espécie de central unificada de pedidos, onde todas as solicitações, independentemente da plataforma de origem, sejam exibidas dentro do próprio sistema.</p>
+              <h3>O fluxo funcionaria da seguinte forma:</h3>
+              <ol>
+                <li>O cliente realiza um pedido em uma plataforma de delivery.</li>
+                <li>A plataforma envia os dados do pedido através de uma API.</li>
+                <li>O sistema recebe essas informações e armazena no banco de dados.</li>
+                <li>O pedido aparece automaticamente no KDS da cozinha.</li>
+              </ol>
+              <p>Dessa forma, os funcionários precisam utilizar apenas uma única interface para gerenciar todos os pedidos.</p>
+            </div>
+            
+            <div class="resume-item">
+              <h1>Sistema de despacho e rotas de entrega</h1>
+              <p><em>Outro recurso planejado é um sistema para auxiliar no despacho dos pedidos e no cálculo de rotas de entrega.</em></p>
+              <p>Para isso, é possível utilizar serviços de mapas como o Google Maps Platform ou soluções baseadas no OpenStreetMap.</p>
+              <h3>Com essa integração, o sistema poderá:</h3>
+              <ul>
+                <li>calcular rotas de entrega automaticamente</li>
+                <li>estimar o tempo de chegada do entregador</li>
+                <li>organizar melhor o fluxo de entregas</li>
+              </ul>
+              <p>Dessa forma, os funcionários precisam utilizar apenas uma única interface para gerenciar todos os pedidos.</p>
+            </div>
+
+            <div class="resume-item">
+              <h1>Painel administrativo para o proprietário</h1>
+              <p><em>Outro ponto importante do sistema será a criação de um painel administrativo exclusivo para o proprietário do restaurante.</em></p>
+              <p>PA ideia é permitir que o dono tenha controle total sobre o funcionamento do sistema, podendo realizar alterações sem depender de suporte técnico externo.</p>
+              <h3>Nesse painel será possível, por exemplo:</h3>
+              <ul>
+                <li>alterar o nome do restaurante</li>
+                <li>modificar produtos e preços</li>
+                <li>criar ou editar setores do KDS</li>
+                <li>gerenciar usuários e permissões</li>
+                <li>visualizar relatórios financeiros</li>
+              </ul>
+              <p>Dessa forma, os funcionários precisam utilizar apenas uma única interface para gerenciar todos os pedidos.</p>
+            </div>
+
+
+
+          </div>
+
+         <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Independencia de dados</h4>
+              <h5>O que é a independencia de dados?</h5>
+              <p><em>Experion, New York, NY </em></p>
+              <ul>
+                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
+                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Graphic design specialist</h4>
+              <h5>2017 - 2018</h5>
+              <p><em>Stepping Stone Advertising, New York, NY</em></p>
+              <ul>
+                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+              </ul>
+            </div>
+             <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Senior graphic design specialist</h4>
+              <h5>2019 - Present</h5>
+              <p><em>Experion, New York, NY </em></p>
+              <ul>
+                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
+                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Graphic design specialist</h4>
+              <h5>2017 - 2018</h5>
+              <p><em>Stepping Stone Advertising, New York, NY</em></p>
+              <ul>
+                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+              </ul>
+            </div>
+            -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">Portifolio</h3>
+      <p>Minha redes sociais</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-skype"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+  </footer>
+
+  
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  
+  <div id="preloader"></div>
+
+  
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
