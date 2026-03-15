@@ -23,13 +23,124 @@
 
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    /* ============================= */
+    /* ESTILO PARA ARTIGO DO BLOG */
+    /* ============================= */
+    .resume p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .resume ul, .resume ol {
+      margin-bottom: 15px;
+    }
+
+    .resume li {
+      margin-bottom: 8px;
+    }
+
+    /* Títulos das seções */
+    .resume .resume-item h4 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .resume-title {
+      margin-top: 40px;
+    }
+
+    /* Imagens */
+    .resume img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      display: block;
+      margin: 25px auto;
+      border-radius: 10px;
+    }
+
+    .screenshot {
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 6px;
+      background: #111;
+    }
+
+    /* Blocos de código */
+    .resume pre {
+      background: #111111;
+      border-left: 5px solid #e63322;
+      color: #ddd;
+      padding: 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    .resume code {
+      color: #ff9d6e;
+      font-family: monospace;
+      font-size: 14px;
+    }
+
+    /* Caixa para fluxogramas / imagens */
+    .diagram-box {
+      border: 2px dashed #e63322;
+      padding: 40px;
+      margin: 30px 0;
+      text-align: center;
+      border-radius: 10px;
+      color: #e63322;
+      background: rgba(230, 51, 34, 0.08);
+      font-size: 14px;
+    }
+
+    .resume-item {
+      margin-bottom: 35px;
+    }
+
+    /* ==================== IDENTIDADE BAZUKA BURGER ==================== */
+    :root {
+      --accent: #e63322;
+      --accent-hover: #c0281a;
+      --accent-glow: rgba(230, 51, 34, 0.3);
+      --heading-color: #ffffff;
+      --default-color: #f0f0f0;
+      --surface-color: #1a1a1a;
+      --background-color: #0a0a0a;
+    }
+
+    .resume-title {
+      color: var(--accent);
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+    .resume-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .resume img { margin: 20px auto; }
+      .resume pre { font-size: 13px; }
+    }
+  </style>
+
 </head>
 
 <body class="resume-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
         <h1 class="sitename">Portifolio</h1>
       </a>
@@ -38,12 +149,13 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="Conhecimentos.html">Conhecimentos</a></li>
-          <!--<li><a href="services.html">Services</a></li>-->
           <li><a href="portfolio.html">Projetos</a></li>
-          <li class="dropdown"><a href="#"><span>Blogs</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown">
+            <a href="#"><span>Blogs</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="Banco-de-dados.html">Banco de dados</a></li>
-              <li class="dropdown"><a href="POO.html"><span>POO</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown">
+                <a href="POO.html"><span>POO</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="POO.html">POO</a></li>
                   <li><a href="#">Polimofismo</a></li>
@@ -52,16 +164,14 @@
                   <li><a href="#">Herança</a></li>
                 </ul>
               </li>
-              <li><a href="#">Python</a></li>
-              <li><a href="#">Compiladores</a></li>
-              <li><a href="#">Sistema</a></li>
+              <li><a href="services.html">Python</a></li>
+              <li><a href="Compiladores.html">Compiladores</a></li>
+              <li><a href="sistema.html">Sistema</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contatos</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
 
@@ -73,8 +183,8 @@
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1>Planejamento do Backend e Arquitetura de um Sistema de Gestão para Restaurante</h1>
-              <p class="mb-0">Essa é uma explicação sobre o grande sistema de restaurante chamado Bazuka Burger. Aqui vamos explorar as partes interna e externa do desenvolvimento, envolvendo integrações de sistemas como: 99 food, FoodDelivery e ifood.</p>
-             <p class="mb-0">Vou explicar as ferramentas que eu utilizei para realizar todo o processo.</p>
+              <p class="mb-0">Essa é uma explicação sobre o grande sistema de restaurante chamado Bazuka Burger. Aqui vamos explorar as partes interna e externa do desenvolvimento, envolvendo integrações de sistemas como: 99 food, FoodDelivery e iFood.</p>
+              <p class="mb-0">Vou explicar as ferramentas que eu utilizei para realizar todo o processo.</p>
             </div>
           </div>
         </div>
@@ -89,20 +199,97 @@
       </nav>
     </div>
 
-    
     <section id="resume" class="resume section">
-
       <div class="container">
-
         <div class="row">
-
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">O que é o Banco de dados?</h3>
 
+            <!-- ====================== PROCESSO INICIAL ====================== -->
+            <h3 class="resume-title">Processo inicial de desenvolvimento do sistema</h3>
+
+            <div class="resume-item">
+              <h4>Criação da Interface Principal (Frontend)</h4>
+              <p>O desenvolvimento começou pela camada visível do sistema: a interface que o cliente vê ao acessar o site do Bazuka Burger.</p>
+              <p>Foi utilizada uma stack simples e eficiente composta por HTML5 semântico, CSS3 com variáveis e JavaScript puro, priorizando performance e experiência do usuário.</p>
+
+              <p><strong>Principais componentes desenvolvidos:</strong></p>
+              <ul>
+                <li>Header fixo com navegação e alternância de tema claro/escuro</li>
+                <li>Hero Section com animação SVG + modelo 3D (Spline)</li>
+                <li>Seção de Destaques com grid responsivo</li>
+                <li>Modal de personalização de pedidos</li>
+                <li>Mapa interativo de área de entrega (Leaflet)</li>
+                <li>Botões flutuantes de integração (WhatsApp, iFood e 99Food)</li>
+              </ul>
+
+              <div class="screenshot">
+                <img src="assets/img/Tela inicial do sistema.png" alt="Tela inicial do Bazuka Burger">
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Estrutura Inicial do Código</h4>
+              <p>A estrutura foi organizada utilizando HTML semântico para facilitar a leitura e manutenção futura.</p>
+              <p>A aplicação foi dividida em três partes principais: Header, Conteúdo Principal e Rodapé.</p>
+
+              <pre><code>&lt;header id="site-header"&gt;
+  &lt;a href="#" class="site-logo"&gt;Bazuka&lt;span&gt;BURGER&lt;/span&gt;&lt;/a&gt;
+  &lt;ul class="nav-menu"&gt;
+    &lt;li&gt;&lt;a href="#home"&gt;Início&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#destaques"&gt;Destaques&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="cardapio.html"&gt;Cardápio&lt;/a&gt;&lt;/li&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/header&gt;</code></pre>
+            </div>
+
+            <div class="resume-item">
+              <h4>Hero Section – Animação de Montagem do Hambúrguer</h4>
+              <p>Uma das partes mais marcantes é a Hero Section, que alterna entre modelo 3D e animação SVG em camadas.</p>
+
+              <pre><code>&lt;section class="hero-section" id="home"&gt;
+  &lt;spline-viewer url="https://prod.spline.design/ab6vu9xs2T8vq0KJ/scene.splinecode"&gt;&lt;/spline-viewer&gt;
+  
+  &lt;div class="hero-skeleton-background"&gt;
+    &lt;div class="burger-assembly-scene"&gt;
+      &lt;!-- Camadas SVG: pão, alface, queijo, hambúrguer, tomate, cebola... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+              <div class="diagram-box">
+                <img src="assets/img/Montagem.png" alt="">
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Integração de Modelo 3D com Spline</h4>
+              <pre><code>&lt;spline-viewer url="https://prod.spline.design/ab6vu9xs2T8vq0KJ/scene.splinecode"&gt;&lt;/spline-viewer&gt;</code></pre>
+            </div>
+
+            <div class="resume-item">
+              <h4>Cardápio Digital e Modal de Personalização</h4>
+              <p>Cada produto é exibido em cards responsivos, e ao clicar em "Adicionar ao pedido" abre um modal para customização.</p>
+
+              <div class="diagram-box">
+                <img src="assets/img/Destaques.png" alt="">
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Mapa de Entrega e Integrações Externas</h4>
+              <p>Foi implementado mapa interativo com Leaflet e botões flutuantes para WhatsApp, iFood e 99Food.</p>
+
+              <div class="diagram-box">
+                <img src="assets/img/raio de entrega.png" alt="">
+              </div>
+            </div>
+            
+            <!--RESUMO NAO MECHER-->
+            <h3 class="resume-title"></h3>
             <div class="resume-item pb-0">
-              <h4>........</h4>
-              <p><em>Durante o desenvolvimento do meu sistema para restaurantes, consegui avançar bastante na parte visual e nas interfaces do sistema. Já desenvolvi componentes importantes como o KDS (Kitchen Display System), o cardápio digital e a tela principal voltada para o cliente, responsável por apresentar os produtos e atrair o consumidor para realizar pedidos.</em></p>
-<p><em>Apesar desse progresso na interface do sistema, comecei a perceber que ainda faltava desenvolver uma parte fundamental da aplicação: o backend, responsável por toda a lógica de funcionamento do sistema.</em></p>
+              <p><em>Durante o desenvolvimento do sistema para restaurante, consegui avançar bastante na parte visual e nas interfaces do sistema. Já desenvolvi componentes importantes como o KDS (Kitchen Display System), o cardápio digital e a tela principal voltada para o cliente, responsável por apresentar os produtos e atrair o consumidor para realizar pedidos.</em></p>
+              <p><em>Apesar desse progresso na interface do sistema, comecei a perceber que ainda faltava desenvolver uma parte fundamental da aplicação: o backend, responsável por toda a lógica de funcionamento do sistema.</em></p>
             </div>
             
 
