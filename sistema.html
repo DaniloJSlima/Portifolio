@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Blog: Banco de dados</title>
+  <title>Blog: sistema</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -24,9 +24,6 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
-    /* ============================= */
-    /* ESTILO PARA ARTIGO DO BLOG */
-    /* ============================= */
     .resume p {
       line-height: 1.7;
       margin-bottom: 15px;
@@ -40,7 +37,6 @@
       margin-bottom: 8px;
     }
 
-    /* Títulos das seções */
     .resume .resume-item h4 {
       font-size: 22px;
       margin-bottom: 12px;
@@ -51,7 +47,6 @@
       margin-top: 40px;
     }
 
-    /* Imagens */
     .resume img {
       width: 100%;
       max-width: 900px;
@@ -68,7 +63,6 @@
       background: #111;
     }
 
-    /* Blocos de código */
     .resume pre {
       background: #111111;
       border-left: 5px solid #e63322;
@@ -85,7 +79,6 @@
       font-size: 14px;
     }
 
-    /* Caixa para fluxogramas / imagens */
     .diagram-box {
       border: 2px dashed #e63322;
       padding: 40px;
@@ -101,7 +94,6 @@
       margin-bottom: 35px;
     }
 
-    /* ==================== IDENTIDADE BAZUKA BURGER ==================== */
     :root {
       --accent: #e63322;
       --accent-hover: #c0281a;
@@ -284,7 +276,155 @@
                 <img src="assets/img/raio de entrega.png" alt="">
               </div>
             </div>
-            
+
+
+            <!-- ====================== TELA DE OPERAÇÕES — PROPOSTA E FUNCIONAMENTO ====================== -->
+
+            <h3 class="resume-title">Proposta da Central de Operações — BazukaOPS</h3>
+
+            <div class="resume-item">
+              <h4>O problema que o sistema resolve</h4>
+              <p>Restaurantes que trabalham com delivery enfrentam hoje um problema muito comum: a fragmentação das operações. Os pedidos chegam pelo WhatsApp, pelo iFood, pelo 99Food e às vezes por ligação. Cada um desses canais exige que o atendente fique com um celular ou computador diferente aberto, respondendo em plataformas distintas, anotando pedidos em papéis ou planilhas separadas e tentando coordenar a cozinha ao mesmo tempo.</p>
+              <p>Essa fragmentação causa atrasos, erros de pedido, perda de informação e sobrecarga da equipe. O objetivo do BazukaOPS é eliminar exatamente esse problema, reunindo tudo em uma única tela de operações centralizada.</p>
+
+              <div class="diagram-box">
+                [ Foto da tela inicial do BazukaOPS — visão geral dos módulos ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>O que é o BazukaOPS</h4>
+              <p>O BazukaOPS é o painel interno do restaurante, acessado apenas pela equipe. Ele funciona como uma central de comando onde o operador consegue visualizar e gerenciar todos os pedidos em andamento, controlar o cardápio em tempo real, se comunicar com clientes de diferentes plataformas e acompanhar os números do dia, sem sair de uma única tela.</p>
+              <p>A interface foi construída no mesmo estilo visual do site público do Bazuka Burger, com suporte a tema escuro e tema claro, garantindo que a identidade do projeto seja consistente em todas as telas do sistema.</p>
+
+              <div class="diagram-box">
+                [ Fluxograma — estrutura dos módulos do BazukaOPS e como eles se conectam ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>KDS — A cozinha enxerga tudo em tempo real</h4>
+              <p>O módulo central do BazukaOPS é o KDS, o Kitchen Display System. Ele organiza todos os pedidos ativos em quatro colunas que representam o ciclo completo de um pedido: <strong>Em Preparo</strong>, <strong>Pronto</strong>, <strong>Em Rota</strong> e <strong>Entregue</strong>.</p>
+              <p>Cada pedido aparece como um card com o nome do cliente, os itens solicitados, o canal de origem, o valor total e o tempo decorrido desde que chegou. O operador avança o pedido de uma coluna para a próxima com um único clique, mantendo toda a equipe alinhada sobre o que está acontecendo.</p>
+              <p>Para facilitar o trabalho em dias de alto volume, há uma barra de busca no topo que filtra as comandas em todas as colunas simultaneamente, tanto pelo nome do cliente quanto pelo número do pedido.</p>
+
+              <div class="diagram-box">
+                [ Foto do KDS com as 4 colunas e exemplos de comandas em cada estágio ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Alerta visual por tempo de preparo</h4>
+              <p>Um dos recursos pensados para reduzir atrasos é o sistema de alerta progressivo por tempo. Cada comanda possui uma barra de progresso na parte inferior que começa verde e vai mudando de cor conforme o pedido envelhece.</p>
+              <p>Até 20 minutos o card permanece neutro. Entre 20 e 35 minutos a barra e o contador ficam amarelos, indicando atenção. Acima de 35 minutos o card inteiro muda: borda vermelha, fundo avermelhado e o contador começa a piscar, chamando a atenção do operador de forma imediata.</p>
+              <p>Esse sistema existe para que nenhum pedido seja esquecido. Em vez de depender de memória ou anotação manual, a própria tela avisa visualmente quando um pedido está demorando mais do que deveria.</p>
+
+              <div class="diagram-box">
+                [ Foto comparando um card neutro, um card amarelo e um card vermelho piscando ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Detalhe e edição da comanda</h4>
+              <p>Ao clicar em qualquer card do KDS, o sistema abre um painel com todas as informações completas daquele pedido: nome e telefone do cliente, endereço de entrega com complemento, status atual, tempo decorrido, lista de itens com quantidades e observações individuais, e forma de pagamento.</p>
+              <p>Caso o cliente ligue pedindo uma alteração depois que o pedido já foi criado, o operador pode editar a comanda diretamente pelo sistema: corrigir o endereço, mudar a quantidade de um item, adicionar uma observação ou incluir um produto novo. Tudo sem precisar cancelar e recriar o pedido.</p>
+
+              <div class="diagram-box">
+                [ Foto do modal de detalhe da comanda aberto ]
+              </div>
+
+              <div class="diagram-box">
+                [ Foto do modal de edição com a lista de itens sendo modificada ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Finalização de pedido e formas de pagamento</h4>
+              <p>Quando um pedido é concluído, o operador abre o modal de finalização. O sistema já sabe se aquela comanda foi paga no momento da criação ou se o pagamento ainda está pendente, e ajusta a tela de acordo.</p>
+              <p>Para pedidos não pagos, o operador seleciona a forma de pagamento dentre as opções disponíveis: PIX, Cartão de Crédito, Cartão de Débito, Dinheiro, Vale Refeição, Voucher, Fiado e 99Pay. Ao selecionar dinheiro, aparece um campo para registrar o valor para troco.</p>
+              <p>Existe ainda a possibilidade de dividir o pagamento entre duas formas diferentes. Por exemplo, parte em PIX e o restante em dinheiro. O sistema calcula automaticamente o valor da segunda forma com base no que foi informado na primeira, evitando erros de cálculo manual.</p>
+
+              <div class="diagram-box">
+                [ Fluxograma — os três caminhos possíveis na finalização: já pago / pagamento único / pagamento dividido ]
+              </div>
+
+              <div class="diagram-box">
+                [ Foto do modal de finalização com as 8 opções de pagamento visíveis ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Histórico de pedidos finalizados e reabertura</h4>
+              <p>Todos os pedidos concluídos ficam registrados na aba Finalizadas, com informações de cliente, endereço, itens, total e a forma de pagamento utilizada. Essa aba funciona como um histórico do turno, permitindo que o operador consulte qualquer pedido do dia com facilidade.</p>
+              <p>Se por algum motivo for necessário reabrir um pedido que já foi finalizado — uma entrega que voltou, um erro no registro, um pagamento que não foi confirmado — o operador pode fazer isso com um único clique. O pedido retorna automaticamente para a coluna "Em Preparo" do KDS, pronto para ser reprocessado.</p>
+
+              <div class="diagram-box">
+                [ Foto da aba Finalizadas com o grid de comandas concluídas e o botão Reabrir ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Controle do cardápio em tempo real</h4>
+              <p>Um problema muito frequente em restaurantes é o cliente fazer um pedido de um item que acabou no estoque ou que não está disponível naquele dia. Para resolver isso, o BazukaOPS oferece uma tela de gestão do cardápio onde o operador pode ativar ou desativar qualquer produto com um clique.</p>
+              <p>Quando um item é desativado, ele desaparece imediatamente do cardápio digital público que o cliente acessa. Na tela de operações o item continua visível para a equipe, porém marcado claramente como inativo, facilitando a reativação quando o produto voltar a estar disponível.</p>
+              <p>Além do controle de disponibilidade, o operador também pode adicionar novos itens ao cardápio, editar nome, descrição, preço e imagem de produtos existentes ou remover itens que não fazem mais parte do menu.</p>
+
+              <div class="diagram-box">
+                [ Foto do grid de cardápio com um item ativo e um item desativado lado a lado ]
+              </div>
+
+              <div class="diagram-box">
+                [ Fluxograma — ciclo de vida de um item do cardápio: criação, ativação, desativação e remoção ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Central de Chats — WhatsApp, iFood e 99Food em uma só tela</h4>
+              <p>Hoje, para gerenciar pedidos de múltiplas plataformas, um atendente precisa alternar entre diferentes aplicativos o tempo todo. Isso aumenta o risco de deixar uma mensagem sem resposta e dificulta manter um padrão de atendimento consistente.</p>
+              <p>O módulo de Chats do BazukaOPS centraliza as conversas do WhatsApp, iFood e 99Food em uma única interface. O operador vê todas as conversas na barra lateral, com indicadores de mensagens não lidas, e pode alternar entre elas sem sair da tela de operações.</p>
+              <p>Para agilizar o atendimento, há um conjunto de respostas rápidas pré-configuradas com as mensagens mais usadas no dia a dia: confirmação de pedido recebido, aviso de que o pedido saiu para entrega, confirmação de entrega, informação sobre o horário de funcionamento, entre outras. O operador seleciona a resposta desejada com um clique e pode editar o texto antes de enviar.</p>
+
+              <div class="diagram-box">
+                [ Foto da tela de Chats com a sidebar de canais e a conversa aberta do WhatsApp ]
+              </div>
+
+              <div class="diagram-box">
+                [ Fluxograma — como um pedido que chega pelo WhatsApp percorre o sistema até ser finalizado ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Dashboard — acompanhamento dos números do dia</h4>
+              <p>O Dashboard oferece uma visão rápida do desempenho do restaurante no turno atual. Ele exibe quatro indicadores principais: total de pedidos realizados no dia, faturamento acumulado, ticket médio por pedido e tempo médio de preparo.</p>
+              <p>Abaixo dos indicadores, há um gráfico de distribuição que mostra de onde os pedidos estão chegando — WhatsApp, iFood ou 99Food — e uma lista dos itens mais vendidos no dia. Essas informações ajudam o proprietário e o operador a entender quais canais estão gerando mais movimento e quais produtos estão saindo mais.</p>
+
+              <div class="diagram-box">
+                [ Foto do Dashboard com os 4 indicadores e os gráficos de origem e top itens ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Configurações de funcionamento e delivery</h4>
+              <p>A tela de Configurações centraliza todos os parâmetros operacionais do restaurante. O operador pode definir os horários de abertura e fechamento para cada dia da semana de forma independente, ativando ou desativando cada período conforme necessário — útil em feriados ou dias com funcionamento diferenciado.</p>
+              <p>Na parte de configurações de delivery, é possível ajustar o raio máximo de entrega em quilômetros, a taxa de entrega cobrada, o valor mínimo de pedido e o tempo estimado informado ao cliente. Há ainda um toggle geral que desliga completamente o sistema de delivery quando o restaurante não está aceitando entregas.</p>
+
+              <div class="diagram-box">
+                [ Foto da tela de Configurações com os toggles de horário e os campos de delivery ]
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <h4>Visão geral do fluxo completo de um pedido no sistema</h4>
+              <p>Para entender como todas as partes se conectam, vale visualizar o caminho completo que um pedido percorre dentro do BazukaOPS, desde o momento em que o cliente faz o pedido até a entrega confirmada e o pagamento registrado.</p>
+
+              <div class="diagram-box">
+                [ Fluxograma principal — caminho completo de um pedido: chegada pelo canal → criação da comanda → KDS (preparo → pronto → rota → entregue) → finalização com pagamento → histórico de finalizados ]
+              </div>
+
+              <p>Cada etapa desse fluxo é gerenciada por um módulo diferente do sistema, mas o operador não precisa navegar entre telas para acompanhar o pedido: o KDS mantém tudo visível em um único lugar, e os outros módulos estão sempre acessíveis pelo menu superior.</p>
+            </div>
+
+
             <!--RESUMO NAO MECHER-->
             <h3 class="resume-title"></h3>
             <div class="resume-item pb-0">
@@ -363,9 +503,24 @@
               <p>Dessa forma, os funcionários precisam utilizar apenas uma única interface para gerenciar todos os pedidos.</p>
             </div>
 
-
+            <div class="resume-item">
+              <h1>Cardapio</h1>
+              <p><em>Outro ponto importante do sistema será a criação de um painel administrativo exclusivo para o proprietário do restaurante.</em></p>
+              <p>PA ideia é permitir que o dono tenha controle total sobre o funcionamento do sistema, podendo realizar alterações sem depender de suporte técnico externo.</p>
+              <h3>Nesse painel será possível, por exemplo:</h3>
+              <ul>
+                <li>alterar o nome do restaurante</li>
+                <li>modificar produtos e preços</li>
+                <li>criar ou editar setores do KDS</li>
+                <li>gerenciar usuários e permissões</li>
+                <li>visualizar relatórios financeiros</li>
+              </ul>
+              <p>Dessa forma, os funcionários precisam utilizar apenas uma única interface para gerenciar todos os pedidos.</p>
+            </div>
 
           </div>
+
+        </div>
 
          <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <h3 class="resume-title">Professional Experience</h3>
@@ -418,36 +573,31 @@
             </div>
             -->
 
-          </div>
-
-        </div>
-
       </div>
 
     </section>
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
+   <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Portifolio</h3>
       <p>Minha redes sociais</p>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/DaniloJSlima"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/danilo-josu%C3%A9-274b83291/"><i class="bi bi-linkedin"></i></a>
       </div>
+      <div class="container">
+        <div class="credits">
+        </div>
+      </div>
+    </div>
   </footer>
 
-  
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  
   <div id="preloader"></div>
 
-  
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -459,7 +609,6 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-  
   <script src="assets/js/main.js"></script>
 
 </body>
