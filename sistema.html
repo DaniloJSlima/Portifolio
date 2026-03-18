@@ -8,9 +8,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <!-- Favicons -->
   <link href="assets/img/Foguete.gif" rel="icon">
-
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -20,123 +18,262 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
-    .resume p {
-      line-height: 1.7;
-      margin-bottom: 15px;
-    }
-
-    .resume ul, .resume ol {
-      margin-bottom: 15px;
-    }
-
-    .resume li {
-      margin-bottom: 8px;
-    }
-
-    .resume .resume-item h4 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    .resume-title {
-      margin-top: 40px;
-    }
-
-    .resume img {
-      width: 100%;
-      max-width: 900px;
-      height: auto;
-      display: block;
-      margin: 25px auto;
-      border-radius: 10px;
-    }
-
-    .screenshot {
-      border: 1px solid #444;
-      border-radius: 10px;
-      padding: 6px;
-      background: #111;
-    }
-
-    .resume pre {
-      background: #111111;
-      border-left: 5px solid #e63322;
-      color: #ddd;
-      padding: 20px;
-      border-radius: 10px;
-      overflow-x: auto;
-      margin: 20px 0;
-    }
-
-    .resume code {
-      color: #ff9d6e;
-      font-family: monospace;
-      font-size: 14px;
-    }
-
-    .diagram-box {
-      border: 2px dashed #e63322;
-      padding: 40px;
-      margin: 30px 0;
-      text-align: center;
-      border-radius: 10px;
-      color: #e63322;
-      background: rgba(230, 51, 34, 0.08);
-      font-size: 14px;
-    }
-
-    .resume-item {
-      margin-bottom: 35px;
-    }
+    /* ============================
+       BASE DO BLOG
+    ============================ */
+    .resume p { line-height: 1.7; margin-bottom: 15px; }
+    .resume ul, .resume ol { margin-bottom: 15px; }
+    .resume li { margin-bottom: 8px; }
+    .resume .resume-item h4 { font-size: 22px; margin-bottom: 12px; font-weight: 600; }
+    .resume-title { margin-top: 40px; }
+    .resume img { width: 100%; max-width: 900px; height: auto; display: block; margin: 25px auto; border-radius: 10px; }
+    .resume pre { background: #111111; border-left: 5px solid #e63322; color: #ddd; padding: 20px; border-radius: 10px; overflow-x: auto; margin: 20px 0; }
+    .resume code { color: #ff9d6e; font-family: monospace; font-size: 14px; }
+    .resume-item { margin-bottom: 35px; }
 
     :root {
       --accent: #e63322;
       --accent-hover: #c0281a;
       --accent-glow: rgba(230, 51, 34, 0.3);
-      --heading-color: #ffffff;
-      --default-color: #f0f0f0;
-      --surface-color: #1a1a1a;
-      --background-color: #0a0a0a;
     }
 
-    .resume-title {
-      color: var(--accent);
-      position: relative;
-      padding-bottom: 12px;
-    }
-
-    .resume-title:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 3px;
-    }
+    .resume-title { color: var(--accent); position: relative; padding-bottom: 12px; }
+    .resume-title:after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background: var(--accent); border-radius: 3px; }
 
     @media (max-width: 768px) {
       .resume img { margin: 20px auto; }
       .resume pre { font-size: 13px; }
     }
-  </style>
 
+    /* ============================
+       DIAGRAM-BOX clicável
+    ============================ */
+    .diagram-box {
+      border: 2px dashed #e63322;
+      margin: 28px 0;
+      border-radius: 10px;
+      color: #e63322;
+      background: rgba(230, 51, 34, 0.05);
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      transition: box-shadow 0.22s, border-color 0.22s;
+    }
+
+    .diagram-box:hover {
+      box-shadow: 0 0 0 3px rgba(230, 51, 34, 0.28);
+    }
+
+    /* quando tem imagem ela ocupa 100% da caixa */
+    .diagram-box img {
+      width: 100%; height: auto;
+      display: block; margin: 0;
+      border-radius: 0;
+      transition: opacity 0.18s;
+    }
+
+    .diagram-box:hover img { opacity: 0.88; }
+
+    /* quando é placeholder (sem imagem) */
+    .diagram-box.placeholder {
+      padding: 38px 28px;
+      text-align: center;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    /* ícone de lupa */
+    .zoom-hint {
+      position: absolute;
+      bottom: 9px; right: 11px;
+      background: rgba(230, 51, 34, 0.82);
+      color: #fff;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.18s;
+    }
+
+    .diagram-box:hover .zoom-hint,
+    .screenshot:hover .zoom-hint { opacity: 1; }
+
+    /* screenshot clicável */
+    .screenshot {
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 6px;
+      background: #111;
+      cursor: pointer;
+      transition: box-shadow 0.22s;
+      position: relative;
+      overflow: hidden;
+      display: block;
+    }
+
+    .screenshot:hover { box-shadow: 0 0 0 3px rgba(230,51,34,0.32); }
+
+    .screenshot img { border-radius: 6px; }
+
+    /* ============================
+       MODAL DE IMAGEM
+    ============================ */
+    #img-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.93);
+      z-index: 99999;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+
+    #img-modal-overlay.open { display: flex; }
+
+    /* botão fechar */
+    #img-modal-close {
+      position: fixed;
+      top: 16px; right: 18px;
+      width: 40px; height: 40px;
+      background: rgba(230, 51, 34, 0.9);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100001;
+      transition: background 0.18s, transform 0.18s;
+    }
+
+    #img-modal-close:hover { background: #c0281a; transform: scale(1.1); }
+
+    /* setas de navegação */
+    .modal-nav {
+      position: fixed;
+      top: 50%; transform: translateY(-50%);
+      width: 46px; height: 46px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100001;
+      transition: background 0.18s;
+      user-select: none;
+    }
+
+    .modal-nav:hover { background: rgba(230,51,34,0.7); border-color: transparent; }
+    .modal-nav.disabled { opacity: 0.2; pointer-events: none; }
+    #modal-prev { left: 14px; }
+    #modal-next { right: 14px; }
+
+    /* contador */
+    #img-modal-counter {
+      position: fixed;
+      top: 20px; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.45);
+      font-size: 0.75rem;
+      z-index: 100001;
+      pointer-events: none;
+      letter-spacing: 1px;
+    }
+
+    /* conteúdo central */
+    #img-modal-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 92vw;
+      cursor: default;
+    }
+
+    #img-modal-img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+      display: block;
+    }
+
+    /* placeholder no modal */
+    #img-modal-placeholder {
+      display: none;
+      color: #f0f0f0;
+      font-size: 1rem;
+      text-align: center;
+      padding: 44px 36px;
+      background: #1a1a1a;
+      border-radius: 12px;
+      border: 2px dashed #e63322;
+      max-width: 500px;
+      line-height: 1.8;
+    }
+
+    /* legenda */
+    #img-modal-caption {
+      margin-top: 14px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      text-align: center;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    /* atalho ESC */
+    #esc-hint {
+      position: fixed;
+      bottom: 14px; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.22);
+      font-size: 0.7rem;
+      pointer-events: none;
+      z-index: 100001;
+      white-space: nowrap;
+    }
+  </style>
 </head>
 
 <body class="resume-page">
+
+  <!-- MODAL GLOBAL DE IMAGEM -->
+  <div id="img-modal-overlay" onclick="handleOverlayClick(event)">
+    <button id="img-modal-close" onclick="closeModal()" title="Fechar (Esc)">&times;</button>
+    <button class="modal-nav" id="modal-prev" onclick="navModal(-1, event)">&#8249;</button>
+    <button class="modal-nav" id="modal-next" onclick="navModal(1, event)">&#8250;</button>
+    <div id="img-modal-counter"></div>
+
+    <div id="img-modal-box">
+      <img id="img-modal-img" src="" alt="">
+      <div id="img-modal-placeholder"></div>
+      <div id="img-modal-caption"></div>
+    </div>
+
+    <div id="esc-hint">ESC para fechar &nbsp;&middot;&nbsp; &#8592; &#8594; para navegar</div>
+  </div>
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <h1 class="sitename">Portifolio</h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
@@ -158,7 +295,13 @@
               </li>
               <li><a href="services.html">Python</a></li>
               <li><a href="Compiladores.html">Compiladores</a></li>
-              <li><a href="sistema.html">Sistema</a></li>
+              <li class="dropdown">
+                <a href="sistema.html"><span>Sistema</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="POO.html">Back-end</a></li>
+                  <li><a href="#">Integracões</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
@@ -196,14 +339,12 @@
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
 
-            <!-- ====================== PROCESSO INICIAL ====================== -->
             <h3 class="resume-title">Processo inicial de desenvolvimento do sistema</h3>
 
             <div class="resume-item">
               <h4>Criação da Interface Principal (Frontend)</h4>
               <p>O desenvolvimento começou pela camada visível do sistema: a interface que o cliente vê ao acessar o site do Bazuka Burger.</p>
               <p>Foi utilizada uma stack simples e eficiente composta por HTML5 semântico, CSS3 com variáveis e JavaScript puro, priorizando performance e experiência do usuário.</p>
-
               <p><strong>Principais componentes desenvolvidos:</strong></p>
               <ul>
                 <li>Header fixo com navegação e alternância de tema claro/escuro</li>
@@ -214,8 +355,9 @@
                 <li>Botões flutuantes de integração (WhatsApp, iFood e 99Food)</li>
               </ul>
 
-              <div class="screenshot">
+              <div class="screenshot" data-caption="Tela inicial do Bazuka Burger">
                 <img src="assets/img/Tela inicial do sistema.png" alt="Tela inicial do Bazuka Burger">
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ampliar</div>
               </div>
             </div>
 
@@ -241,7 +383,6 @@
 
               <pre><code>&lt;section class="hero-section" id="home"&gt;
   &lt;spline-viewer url="https://prod.spline.design/ab6vu9xs2T8vq0KJ/scene.splinecode"&gt;&lt;/spline-viewer&gt;
-  
   &lt;div class="hero-skeleton-background"&gt;
     &lt;div class="burger-assembly-scene"&gt;
       &lt;!-- Camadas SVG: pão, alface, queijo, hambúrguer, tomate, cebola... --&gt;
@@ -249,8 +390,9 @@
   &lt;/div&gt;
 &lt;/section&gt;</code></pre>
 
-              <div class="diagram-box">
-                <img src="assets/img/Montagem.png" alt="">
+              <div class="diagram-box" data-caption="Animação SVG de montagem do hambúrguer em camadas">
+                <img src="assets/img/Montagem.png" alt="Montagem do hambúrguer">
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ampliar</div>
               </div>
             </div>
 
@@ -263,8 +405,9 @@
               <h4>Cardápio Digital e Modal de Personalização</h4>
               <p>Cada produto é exibido em cards responsivos, e ao clicar em "Adicionar ao pedido" abre um modal para customização.</p>
 
-              <div class="diagram-box">
-                <img src="assets/img/Destaques.png" alt="">
+              <div class="diagram-box" data-caption="Seção de destaques e modal de personalização do pedido">
+                <img src="assets/img/Destaques.png" alt="Destaques">
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ampliar</div>
               </div>
             </div>
 
@@ -272,14 +415,13 @@
               <h4>Mapa de Entrega e Integrações Externas</h4>
               <p>Foi implementado mapa interativo com Leaflet e botões flutuantes para WhatsApp, iFood e 99Food.</p>
 
-              <div class="diagram-box">
-                <img src="assets/img/raio de entrega.png" alt="">
+              <div class="diagram-box" data-caption="Mapa interativo com raio de entrega destacado">
+                <img src="assets/img/raio de entrega.png" alt="Raio de entrega">
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ampliar</div>
               </div>
             </div>
 
-
-            <!-- ====================== TELA DE OPERAÇÕES — PROPOSTA E FUNCIONAMENTO ====================== -->
-
+            <!-- ======= BAZUKAOPS ======= -->
             <h3 class="resume-title">Proposta da Central de Operações — BazukaOPS</h3>
 
             <div class="resume-item">
@@ -287,8 +429,9 @@
               <p>Restaurantes que trabalham com delivery enfrentam hoje um problema muito comum: a fragmentação das operações. Os pedidos chegam pelo WhatsApp, pelo iFood, pelo 99Food e às vezes por ligação. Cada um desses canais exige que o atendente fique com um celular ou computador diferente aberto, respondendo em plataformas distintas, anotando pedidos em papéis ou planilhas separadas e tentando coordenar a cozinha ao mesmo tempo.</p>
               <p>Essa fragmentação causa atrasos, erros de pedido, perda de informação e sobrecarga da equipe. O objetivo do BazukaOPS é eliminar exatamente esse problema, reunindo tudo em uma única tela de operações centralizada.</p>
 
-              <div class="diagram-box">
-                <img src="assets/img/Tela inicial de operações.png" alt="">
+              <div class="diagram-box" data-caption="Visão geral da central de operações BazukaOPS">
+                <img src="assets/img/KDscentral.png" alt="Central de operações">
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ampliar</div>
               </div>
             </div>
 
@@ -297,8 +440,9 @@
               <p>O BazukaOPS é o painel interno do restaurante, acessado apenas pela equipe. Ele funciona como uma central de comando onde o operador consegue visualizar e gerenciar todos os pedidos em andamento, controlar o cardápio em tempo real, se comunicar com clientes de diferentes plataformas e acompanhar os números do dia, sem sair de uma única tela.</p>
               <p>A interface foi construída no mesmo estilo visual do site público do Bazuka Burger, com suporte a tema escuro e tema claro, garantindo que a identidade do projeto seja consistente em todas as telas do sistema.</p>
 
-              <div class="diagram-box">
-                [ Fluxograma — estrutura dos módulos do BazukaOPS e como eles se conectam ]
+              <div class="diagram-box placeholder" data-caption="Fluxograma — estrutura dos módulos do BazukaOPS e como eles se conectam">
+                Fluxograma — estrutura dos módulos do BazukaOPS e como eles se conectam
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
             </div>
 
@@ -308,8 +452,9 @@
               <p>Cada pedido aparece como um card com o nome do cliente, os itens solicitados, o canal de origem, o valor total e o tempo decorrido desde que chegou. O operador avança o pedido de uma coluna para a próxima com um único clique, mantendo toda a equipe alinhada sobre o que está acontecendo.</p>
               <p>Para facilitar o trabalho em dias de alto volume, há uma barra de busca no topo que filtra as comandas em todas as colunas simultaneamente, tanto pelo nome do cliente quanto pelo número do pedido.</p>
 
-              <div class="diagram-box">
-                <img src="assets/img/Captura de Tela 2026-03-17 às 13.59.58.png" alt="">
+              <div class="diagram-box placeholder" data-caption="KDS com as 4 colunas: Em Preparo · Pronto · Em Rota · Entregue">
+                <img src="assets/img/KDscentral.png" alt="">
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
             </div>
 
@@ -319,8 +464,9 @@
               <p>Até 20 minutos o card permanece neutro. Entre 20 e 35 minutos a barra e o contador ficam amarelos, indicando atenção. Acima de 35 minutos o card inteiro muda: borda vermelha, fundo avermelhado e o contador começa a piscar, chamando a atenção do operador de forma imediata.</p>
               <p>Esse sistema existe para que nenhum pedido seja esquecido. Em vez de depender de memória ou anotação manual, a própria tela avisa visualmente quando um pedido está demorando mais do que deveria.</p>
 
-              <div class="diagram-box">
-                <img src="assets/img/comparações.png" alt="">
+              <div class="diagram-box" data-caption="Comparação: card neutro (verde), atenção (amarelo) e urgente (vermelho piscando)">
+                <img src="assets/img/comparações.png" alt="Comparação de alertas de tempo">
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ampliar</div>
               </div>
             </div>
 
@@ -329,12 +475,14 @@
               <p>Ao clicar em qualquer card do KDS, o sistema abre um painel com todas as informações completas daquele pedido: nome e telefone do cliente, endereço de entrega com complemento, status atual, tempo decorrido, lista de itens com quantidades e observações individuais, e forma de pagamento.</p>
               <p>Caso o cliente ligue pedindo uma alteração depois que o pedido já foi criado, o operador pode editar a comanda diretamente pelo sistema: corrigir o endereço, mudar a quantidade de um item, adicionar uma observação ou incluir um produto novo. Tudo sem precisar cancelar e recriar o pedido.</p>
 
-              <div class="diagram-box">
-                <img src="assets/img/Comanda em aberto.png" alt="">
+              <div class="diagram-box" data-caption="Modal com todas as informações completas da comanda">
+                <img src="assets/img/Comanda em aberto.png" alt="Detalhe da comanda">
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ampliar</div>
               </div>
 
-              <div class="diagram-box">
-                <img src="assets/img/alteramento.png" alt="">
+              <div class="diagram-box" data-caption="Modal de edição — alterando itens, endereço e observações">
+                <img src="assets/img/alteramento.png" alt="Edição de comanda">
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ampliar</div>
               </div>
             </div>
 
@@ -344,12 +492,14 @@
               <p>Para pedidos não pagos, o operador seleciona a forma de pagamento dentre as opções disponíveis: PIX, Cartão de Crédito, Cartão de Débito, Dinheiro, Vale Refeição, Voucher, Fiado e 99Pay. Ao selecionar dinheiro, aparece um campo para registrar o valor para troco.</p>
               <p>Existe ainda a possibilidade de dividir o pagamento entre duas formas diferentes. Por exemplo, parte em PIX e o restante em dinheiro. O sistema calcula automaticamente o valor da segunda forma com base no que foi informado na primeira, evitando erros de cálculo manual.</p>
 
-              <div class="diagram-box">
-                [ Fluxograma — os três caminhos possíveis na finalização: já pago / pagamento único / pagamento dividido ]
+              <div class="diagram-box placeholder" data-caption="Fluxograma — três caminhos possíveis na finalização: já pago / pagamento único / pagamento dividido">
+                Fluxograma — já pago · pagamento único · pagamento dividido entre 2 formas
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
 
-              <div class="diagram-box">
-                [ Foto do modal de finalização com as 8 opções de pagamento visíveis ]
+              <div class="diagram-box placeholder" data-caption="Modal de finalização com as 8 opções de pagamento e opção de divisão">
+                <img src="assets/img/Formas de pagamento.png" alt="">
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
             </div>
 
@@ -358,8 +508,9 @@
               <p>Todos os pedidos concluídos ficam registrados na aba Finalizadas, com informações de cliente, endereço, itens, total e a forma de pagamento utilizada. Essa aba funciona como um histórico do turno, permitindo que o operador consulte qualquer pedido do dia com facilidade.</p>
               <p>Se por algum motivo for necessário reabrir um pedido que já foi finalizado — uma entrega que voltou, um erro no registro, um pagamento que não foi confirmado — o operador pode fazer isso com um único clique. O pedido retorna automaticamente para a coluna "Em Preparo" do KDS, pronto para ser reprocessado.</p>
 
-              <div class="diagram-box">
-                [ Foto da aba Finalizadas com o grid de comandas concluídas e o botão Reabrir ]
+              <div class="diagram-box placeholder" data-caption="Aba Finalizadas — histórico do turno com todas as comandas concluídas e botão Reabrir">
+                Foto da aba Finalizadas — grid de comandas concluídas e botão Reabrir
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
             </div>
 
@@ -369,12 +520,14 @@
               <p>Quando um item é desativado, ele desaparece imediatamente do cardápio digital público que o cliente acessa. Na tela de operações o item continua visível para a equipe, porém marcado claramente como inativo, facilitando a reativação quando o produto voltar a estar disponível.</p>
               <p>Além do controle de disponibilidade, o operador também pode adicionar novos itens ao cardápio, editar nome, descrição, preço e imagem de produtos existentes ou remover itens que não fazem mais parte do menu.</p>
 
-              <div class="diagram-box">
-                [ Foto do grid de cardápio com um item ativo e um item desativado lado a lado ]
+              <div class="diagram-box placeholder" data-caption="Grid do cardápio — item ativo vs item desativado com badge DESATIVADO">
+                Foto do cardápio digital — item ativo e item desativado lado a lado
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
 
-              <div class="diagram-box">
-                [ Fluxograma — ciclo de vida de um item do cardápio: criação, ativação, desativação e remoção ]
+              <div class="diagram-box placeholder" data-caption="Fluxograma — ciclo de vida de um item: criação, ativação, desativação e remoção">
+                Fluxograma — ciclo de vida de um item do cardápio
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
             </div>
 
@@ -382,34 +535,38 @@
               <h4>Central de Chats — WhatsApp, iFood e 99Food em uma só tela</h4>
               <p>Hoje, para gerenciar pedidos de múltiplas plataformas, um atendente precisa alternar entre diferentes aplicativos o tempo todo. Isso aumenta o risco de deixar uma mensagem sem resposta e dificulta manter um padrão de atendimento consistente.</p>
               <p>O módulo de Chats do BazukaOPS centraliza as conversas do WhatsApp, iFood e 99Food em uma única interface. O operador vê todas as conversas na barra lateral, com indicadores de mensagens não lidas, e pode alternar entre elas sem sair da tela de operações.</p>
-              <p>Para agilizar o atendimento, há um conjunto de respostas rápidas pré-configuradas com as mensagens mais usadas no dia a dia: confirmação de pedido recebido, aviso de que o pedido saiu para entrega, confirmação de entrega, informação sobre o horário de funcionamento, entre outras. O operador seleciona a resposta desejada com um clique e pode editar o texto antes de enviar.</p>
+              <p>Para agilizar o atendimento, há um conjunto de respostas rápidas pré-configuradas com as mensagens mais usadas no dia a dia: confirmação de pedido recebido, aviso de que o pedido saiu para entrega, confirmação de entrega, informação sobre o horário de funcionamento, entre outras.</p>
 
-              <div class="diagram-box">
-                [ Foto da tela de Chats com a sidebar de canais e a conversa aberta do WhatsApp ]
+              <div class="diagram-box placeholder" data-caption="Central de Chats — sidebar com 3 canais e conversa do WhatsApp aberta">
+                Foto da tela de Chats — sidebar de canais e conversa do WhatsApp aberta
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
 
-              <div class="diagram-box">
-                [ Fluxograma — como um pedido que chega pelo WhatsApp percorre o sistema até ser finalizado ]
+              <div class="diagram-box placeholder" data-caption="Fluxograma — caminho de um pedido do WhatsApp até a finalização no sistema">
+                Fluxograma — pedido pelo WhatsApp → comanda → KDS → finalização
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
             </div>
 
             <div class="resume-item">
               <h4>Dashboard — acompanhamento dos números do dia</h4>
               <p>O Dashboard oferece uma visão rápida do desempenho do restaurante no turno atual. Ele exibe quatro indicadores principais: total de pedidos realizados no dia, faturamento acumulado, ticket médio por pedido e tempo médio de preparo.</p>
-              <p>Abaixo dos indicadores, há um gráfico de distribuição que mostra de onde os pedidos estão chegando — WhatsApp, iFood ou 99Food — e uma lista dos itens mais vendidos no dia. Essas informações ajudam o proprietário e o operador a entender quais canais estão gerando mais movimento e quais produtos estão saindo mais.</p>
+              <p>Abaixo dos indicadores, há um gráfico de distribuição que mostra de onde os pedidos estão chegando — WhatsApp, iFood ou 99Food — e uma lista dos itens mais vendidos no dia.</p>
 
-              <div class="diagram-box">
-                [ Foto do Dashboard com os 4 indicadores e os gráficos de origem e top itens ]
+              <div class="diagram-box placeholder" data-caption="Dashboard — 4 indicadores, gráfico de origem por canal e top itens do dia">
+                Foto do Dashboard — 4 indicadores, gráfico de canais e ranking de top itens
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
             </div>
 
             <div class="resume-item">
               <h4>Configurações de funcionamento e delivery</h4>
-              <p>A tela de Configurações centraliza todos os parâmetros operacionais do restaurante. O operador pode definir os horários de abertura e fechamento para cada dia da semana de forma independente, ativando ou desativando cada período conforme necessário — útil em feriados ou dias com funcionamento diferenciado.</p>
-              <p>Na parte de configurações de delivery, é possível ajustar o raio máximo de entrega em quilômetros, a taxa de entrega cobrada, o valor mínimo de pedido e o tempo estimado informado ao cliente. Há ainda um toggle geral que desliga completamente o sistema de delivery quando o restaurante não está aceitando entregas.</p>
+              <p>A tela de Configurações centraliza todos os parâmetros operacionais do restaurante. O operador pode definir os horários de abertura e fechamento para cada dia da semana de forma independente, ativando ou desativando cada período conforme necessário.</p>
+              <p>Na parte de configurações de delivery, é possível ajustar o raio máximo de entrega em quilômetros, a taxa de entrega cobrada, o valor mínimo de pedido e o tempo estimado informado ao cliente.</p>
 
-              <div class="diagram-box">
-                [ Foto da tela de Configurações com os toggles de horário e os campos de delivery ]
+              <div class="diagram-box placeholder" data-caption="Tela de Configurações — horários por dia da semana e parâmetros de delivery">
+                Foto das Configurações — toggles de horário e campos de raio, taxa e pedido mínimo
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
             </div>
 
@@ -417,11 +574,12 @@
               <h4>Visão geral do fluxo completo de um pedido no sistema</h4>
               <p>Para entender como todas as partes se conectam, vale visualizar o caminho completo que um pedido percorre dentro do BazukaOPS, desde o momento em que o cliente faz o pedido até a entrega confirmada e o pagamento registrado.</p>
 
-              <div class="diagram-box">
-                [ Fluxograma principal — caminho completo de um pedido: chegada pelo canal → criação da comanda → KDS (preparo → pronto → rota → entregue) → finalização com pagamento → histórico de finalizados ]
+              <div class="diagram-box placeholder" data-caption="Fluxograma principal — caminho completo de um pedido no BazukaOPS">
+                Fluxograma completo — canal → comanda → KDS (preparo → pronto → rota → entregue) → finalização → histórico
+                <div class="zoom-hint"><i class="bi bi-zoom-in"></i> Ver</div>
               </div>
 
-              <p>Cada etapa desse fluxo é gerenciada por um módulo diferente do sistema, mas o operador não precisa navegar entre telas para acompanhar o pedido: o KDS mantém tudo visível em um único lugar, e os outros módulos estão sempre acessíveis pelo menu superior.</p>
+              <p>Cada etapa desse fluxo é gerenciada por um módulo diferente do sistema, mas o operador não precisa navegar entre telas para acompanhar o pedido: o KDS mantém tudo visível em um único lugar.</p>
             </div>
 
 
@@ -431,19 +589,17 @@
               <p><em>Durante o desenvolvimento do sistema para restaurante, consegui avançar bastante na parte visual e nas interfaces do sistema. Já desenvolvi componentes importantes como o KDS (Kitchen Display System), o cardápio digital e a tela principal voltada para o cliente, responsável por apresentar os produtos e atrair o consumidor para realizar pedidos.</em></p>
               <p><em>Apesar desse progresso na interface do sistema, comecei a perceber que ainda faltava desenvolver uma parte fundamental da aplicação: o backend, responsável por toda a lógica de funcionamento do sistema.</em></p>
             </div>
-            
 
             <h3 class="resume-title">O que já foi desenvolvido</h3>
             <div class="resume-item">
               <h5>Até o momento, as seguintes partes do sistema já foram construídas:</h5>
-                <ul>
-                    <li>Interface do KDS, utilizada pela equipe da cozinha para visualizar e montar os pedidos.</li>
-                    <li>Cardápio digital, onde os clientes podem visualizar os produtos disponíveis.</li>
-                    <li>Página principal, responsável por apresentar o restaurante e incentivar a realização de pedidos.</li>
-                </ul>
-                <p>Essas partes representam o frontend da aplicação, ou seja, aquilo que o usuário visualiza e com o qual interage diretamente.</p>
-                <p>No entanto, ainda é necessário desenvolver toda a infraestrutura que ficará por trás dessas interfaces, garantindo que as informações sejam processadas corretamente.</p>
+              <ul>
+                <li>Interface do KDS, utilizada pela equipe da cozinha para visualizar e montar os pedidos.</li>
+                <li>Cardápio digital, onde os clientes podem visualizar os produtos disponíveis.</li>
+                <li>Página principal, responsável por apresentar o restaurante e incentivar a realização de pedidos.</li>
               </ul>
+              <p>Essas partes representam o frontend da aplicação, ou seja, aquilo que o usuário visualiza e com o qual interage diretamente.</p>
+              <p>No entanto, ainda é necessário desenvolver toda a infraestrutura que ficará por trás dessas interfaces, garantindo que as informações sejam processadas corretamente.</p>
             </div>
 
             <div class="resume-item">
@@ -474,7 +630,7 @@
               </ol>
               <p>Dessa forma, os funcionários precisam utilizar apenas uma única interface para gerenciar todos os pedidos.</p>
             </div>
-            
+
             <div class="resume-item">
               <h1>Sistema de despacho e rotas de entrega</h1>
               <p><em>Outro recurso planejado é um sistema para auxiliar no despacho dos pedidos e no cálculo de rotas de entrega.</em></p>
@@ -491,7 +647,7 @@
             <div class="resume-item">
               <h1>Painel administrativo para o proprietário</h1>
               <p><em>Outro ponto importante do sistema será a criação de um painel administrativo exclusivo para o proprietário do restaurante.</em></p>
-              <p>PA ideia é permitir que o dono tenha controle total sobre o funcionamento do sistema, podendo realizar alterações sem depender de suporte técnico externo.</p>
+              <p>A ideia é permitir que o dono tenha controle total sobre o funcionamento do sistema, podendo realizar alterações sem depender de suporte técnico externo.</p>
               <h3>Nesse painel será possível, por exemplo:</h3>
               <ul>
                 <li>alterar o nome do restaurante</li>
@@ -519,67 +675,13 @@
             </div>
 
           </div>
-
         </div>
-
-         <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Independencia de dados</h4>
-              <h5>O que é a independencia de dados?</h5>
-              <p><em>Experion, New York, NY </em></p>
-              <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-              </ul>
-            </div>
-
-            <div class="resume-item">
-              <h4>Graphic design specialist</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Stepping Stone Advertising, New York, NY</em></p>
-              <ul>
-                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-              </ul>
-            </div>
-             <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Senior graphic design specialist</h4>
-              <h5>2019 - Present</h5>
-              <p><em>Experion, New York, NY </em></p>
-              <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-              </ul>
-            </div>
-
-            <div class="resume-item">
-              <h4>Graphic design specialist</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Stepping Stone Advertising, New York, NY</em></p>
-              <ul>
-                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-              </ul>
-            </div>
-            -->
-
       </div>
-
     </section>
 
   </main>
 
-   <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Portifolio</h3>
       <p>Minha redes sociais</p>
@@ -587,15 +689,11 @@
         <a href="https://github.com/DaniloJSlima"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/danilo-josu%C3%A9-274b83291/"><i class="bi bi-linkedin"></i></a>
       </div>
-      <div class="container">
-        <div class="credits">
-        </div>
-      </div>
+      <div class="container"><div class="credits"></div></div>
     </div>
   </footer>
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
   <div id="preloader"></div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -608,9 +706,106 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
   <script src="assets/js/main.js"></script>
 
-</body>
+  <!-- ================================
+       MODAL — JAVASCRIPT
+  ================================ -->
+  <script>
+    let modalItems   = [];  // lista de todos os elementos clicáveis em ordem
+    let currentIdx   = 0;
 
+    // Monta o índice varrendo a página na ordem do DOM
+    function buildIndex() {
+      modalItems = [];
+      document.querySelectorAll('.diagram-box, .screenshot').forEach(el => {
+        const img     = el.querySelector('img');
+        const caption = el.getAttribute('data-caption') || (img ? img.getAttribute('alt') : '') || '';
+        const isPlaceholder = el.classList.contains('placeholder');
+        // texto descritivo para placeholders
+        const text = isPlaceholder
+          ? el.childNodes[0]?.textContent?.trim() || caption
+          : '';
+        modalItems.push({
+          el,
+          src:     img && !isPlaceholder ? img.src : null,
+          caption,
+          text
+        });
+      });
+    }
+
+    function openModal(idx) {
+      buildIndex();
+      currentIdx = Math.max(0, Math.min(idx, modalItems.length - 1));
+      renderModal();
+      document.getElementById('img-modal-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function renderModal() {
+      const item    = modalItems[currentIdx];
+      const imgEl   = document.getElementById('img-modal-img');
+      const holdEl  = document.getElementById('img-modal-placeholder');
+      const capEl   = document.getElementById('img-modal-caption');
+      const counter = document.getElementById('img-modal-counter');
+
+      if (item.src) {
+        imgEl.src           = item.src;
+        imgEl.alt           = item.caption;
+        imgEl.style.display = 'block';
+        holdEl.style.display = 'none';
+      } else {
+        imgEl.style.display  = 'none';
+        holdEl.textContent   = item.text || item.caption;
+        holdEl.style.display = 'block';
+      }
+
+      capEl.textContent = item.caption;
+      counter.textContent = (currentIdx + 1) + ' de ' + modalItems.length;
+
+      // estado dos botões de navegação
+      document.getElementById('modal-prev').classList.toggle('disabled', currentIdx === 0);
+      document.getElementById('modal-next').classList.toggle('disabled', currentIdx === modalItems.length - 1);
+    }
+
+    function navModal(dir, e) {
+      e.stopPropagation();
+      const next = currentIdx + dir;
+      if (next >= 0 && next < modalItems.length) {
+        currentIdx = next;
+        renderModal();
+      }
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('img-modal-overlay')) closeModal();
+    }
+
+    function closeModal() {
+      document.getElementById('img-modal-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Teclado: ESC fecha, setas navegam
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('img-modal-overlay').classList.contains('open')) return;
+      if (e.key === 'Escape')      closeModal();
+      if (e.key === 'ArrowRight' && currentIdx < modalItems.length - 1) { currentIdx++; renderModal(); }
+      if (e.key === 'ArrowLeft'  && currentIdx > 0)                     { currentIdx--; renderModal(); }
+    });
+
+    // Vincula clique a cada elemento clicável
+    document.addEventListener('DOMContentLoaded', () => {
+      buildIndex();
+      document.querySelectorAll('.diagram-box, .screenshot').forEach((el, idx) => {
+        el.addEventListener('click', e => {
+          if (e.target.closest('a, button')) return; // ignora cliques em links
+          openModal(idx);
+        });
+      });
+    });
+  </script>
+
+</body>
 </html>
